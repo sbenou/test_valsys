@@ -66,14 +66,12 @@ committed to look at quite a few scenarios
 =============
 How to use it
 =============
-1. from app.py, change the accounts stored in the dictionary containing all parameters
-2. go to the /accounts endpoint in your browser to see the result.
+1. From app.py, change the accounts stored in the dictionary containing all parameters
+2. Go to the /accounts endpoint in your browser to see the result.
 
 ============
 Improvements
 ============
 
-1. Instead of storing the parameters in a dictionary they can be stored 
-in a json file which is the most probable way these would be provided.
-2. Also with regards to the views, Jinja layout template could have been 
-used to extends the base html on both the index.html and accounts.html
+1. Instead of storing the parameters in a dictionary they can be stored in a json file which is the most probable way these would be provided.
+2. Also with regards to the views, Jinja layout template could have been used to extends the base html on both the index.html and accounts.html

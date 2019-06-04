@@ -72,3 +72,4 @@ Improvements
 
 1. Instead of storing the parameters in a dictionary they can be stored in a json file which is the most probable way these would be provided.
 2. Also with regards to the views, Jinja layout template could have been used to extends the base html on both the index.html and accounts.html
+3. More work needs to be done on the error handling side especially on the generator that iterates through iterables

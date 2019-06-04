@@ -62,6 +62,13 @@ committed to look at quite a few scenarios
 
     $ python accounts-test.py
 
+
+=============
+How to use it
+=============
+1. from app.py, change the accounts stored in the dictionary containing all parameters
+2. go to the /accounts endpoint in your browser to see the result.
+
 ============
 Improvements
 ============

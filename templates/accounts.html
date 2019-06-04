@@ -26,9 +26,8 @@
         </div>
         <div id="content"></div>
         {% block content %}
-        <p>{{ result }}</p>
+        <p>{{ result if result != None else error + 'No value is associated with this account! Please try again'}}</p>
         {% endblock content %}
-    </div>
     </div>
     <script src=" https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>

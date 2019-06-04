@@ -1,6 +1,7 @@
+import sys
 from urllib import request as req
 import json
-import requests
+
 
 class FinancialStructure():
 
@@ -39,6 +40,7 @@ class FinancialStructure():
             - <iterator>
         """
         accounts = self.accounts
+
         if isinstance(iterable, dict):
             for key, value in iterable.items():
                 for account in accounts:
@@ -54,11 +56,28 @@ class FinancialStructure():
                     if isinstance(acc, int):
                         yield acc
                         break
+                    else:
+                        raise ValueError(
+                            "The returned account value is not an integer'."
+                        )
         elif isinstance(iterable, list):
             for el in iterable:
                 for acc in self.iterateJson(el, accounts=accounts):
                     yield acc
 
+
     def getAccountValue(self, index, accounts):
         accouts = self.accounts
         return str(list(self.iterateJson(self.getCompFinStruct(index), accounts))[0])
+
+
+# data = {
+#     'baseurl': 'https://tech-test-api.valsys.io',
+#     'tickers': '/tickers',
+#     'structure': '/structure?ticker=',
+#     'index': 1,
+#     'accounts': ["IncomeStatement", "EarningsPerShare"]
+# }
+# fs = FinancialStructure(
+#     data['baseurl'], data['tickers'], data['structure'], data['accounts'])
+# print(fs.getAccountValue(data['index'], data['accounts']))

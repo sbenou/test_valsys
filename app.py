@@ -15,6 +15,7 @@ def index():
 
 @app.route('/accounts/')
 def accounts():
+    error = None
     data = {
         'baseurl': 'https://tech-test-api.valsys.io',
         'tickers': '/tickers',
@@ -27,8 +28,12 @@ def accounts():
         data['baseurl'], data['tickers'], data['structure'], data['accounts'])
     result = fs.getAccountValue(data['index'], data['accounts'])
     account_name = data['accounts'][-1]
-    response = account_name + ': ' + str(result)
-    return render_template('accounts.html', result=response)
+    try:
+        response = account_name + ': ' + str(result)
+    except IndexError:
+        error = "The returned account doesn't hold any value. Please try again with another set of accounts", 500
+        return render_template('index.html', error=error)
+    return render_template('accounts.html', result=response, error=error)
 
 
 if __name__ == '__main__':

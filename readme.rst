@@ -73,7 +73,7 @@ How to use it
 Improvements
 ============
 
-- Instead of storing the parameters in a dictionary they can be stored 
+1. Instead of storing the parameters in a dictionary they can be stored 
 in a json file which is the most probable way these would be provided.
-- Also with regards to the views, Jinja layout template could have been 
+2. Also with regards to the views, Jinja layout template could have been 
 used to extends the base html on both the index.html and accounts.html

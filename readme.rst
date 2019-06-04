@@ -7,10 +7,8 @@
 Test-Valsys Instructions
 ========================
 
-The solution chosen is an API in which endpoint 'accounts' will render the last account 
-and it's value from a list of accounts used as parameters that have been saved in a dictionary. 
-A CLI could also have been used by providing the parameters using the curl function but 
-that was just a personal choice
+The solution chosen is an API in which endpoint 'accounts' will render the last account and it's value from a list of accounts used as parameters that have been saved in a dictionary. 
+A CLI could also have been used by providing the parameters using the curl function but that was just a personal choice
 
 ===========
 Quick Start
@@ -54,8 +52,7 @@ run the app:
     $ set FLASK-APP=app.py flask run
 
 run the tests available in the directory *tests*:
-I have not completed them due to the workload I currently have but 
-can be completed once I have some more spare time definitely but I have 
+I have not completed them due to the workload I currently have but can be completed once I have some more spare time definitely but I have 
 committed to look at quite a few scenarios
 
 .. code-block:: console

@@ -64,7 +64,7 @@ committed to look at quite a few scenarios
 How to use it
 =============
 1. From app.py, change the accounts stored in the dictionary containing all parameters
-2. Go to the /accounts endpoint in your browser to see the result.
+2. Go to the /accounts endpoint in your browser to see the result: the account that holds a value and it's value will be returned
 
 ============
 Improvements

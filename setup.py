@@ -1,0 +1,23 @@
+from setuptools import setup, find_packages
+
+setup(name='test_valsys',
+      version='0.1',
+      description='test api for Valsys',
+      url='',
+      author='Saad Benoumessad',
+      author_email='sbenou@hotmail.com',
+      license='MIT',
+      packages=find_packages(),
+      zip_safe=True,
+      install_requires=['Flask',
+        'Flask-Cors',
+        'pytest',
+        'pytest-arraydiff',
+        'pytest-astropy',
+        'pytest-doctestplus',
+        'pytest-openfiles',
+        'pytest-remotedata',
+        'urllib3',
+        'pylint',
+        'autopep8'],
+      )

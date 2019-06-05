@@ -40,7 +40,7 @@ class FinancialStructure():
             - <iterator>
         """
         accounts = self.accounts
-
+        # try:
         if isinstance(iterable, dict):
             for key, value in iterable.items():
                 for account in accounts:
@@ -64,8 +64,17 @@ class FinancialStructure():
             for el in iterable:
                 for acc in self.iterateJson(el, accounts=accounts):
                     yield acc
+        # except IndexError:
+
 
 
     def getAccountValue(self, index, accounts):
-        accouts = self.accounts
-        return str(list(self.iterateJson(self.getCompFinStruct(index), accounts))[0])
+        accounts = self.accounts
+        try:
+            result = str(list(self.iterateJson(self.getCompFinStruct(index), accounts))[0])
+            return result
+        except IndexError: 
+            ("The returned account value is not an integer. Try again with another et of accounts'.")
+            result = None
+            return result
+        return False

@@ -22,7 +22,7 @@ def accounts():
         'structure': '/structure?ticker=',
         'index': 1,
         'accounts': ["IncomeStatement", "EarningsPerShare",
-                     "DividendsDeclaredPerCommonShare"]
+                    "DividendsDeclaredPerCommonShare"]
     }
     fs = FinancialStructure(
         data['baseurl'], data['tickers'], data['structure'], data['accounts'])

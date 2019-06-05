@@ -125,6 +125,51 @@ def test_getAccountValue_valid(self, index, accounts):
 	assert resp.status_code == 200, resp.text
 	assert j == 78, resp.text
 
+@pytest.mark.parametrize("company, structure, tickers, accounts", "SBUX", "/structure?ticker={SBUX}", "/tickers", ["IncomeStatement", "EarningsPerShare"])
+def test_accounts_no_value(base_url, given_index, company, structure, tickers, accounts):
+	url = base_url + "/structure?ticker={SBUX}" + structure
+	resp = requests.get(url)
+	j = json.loads(resp.text)
+	assert resp.status_code == 500, resp.text
+	assert j == "SBUX"
+
+def test_iterateJson_non_valid(iterable, accounts):
+    	accounts = accounts
+	if isinstance(iterable, dict):
+		for key, value in iterable.items():
+			for account in accounts:
+				if key == account:
+					if not (isinstance(value, dict) or isinstance(value, list)):
+						if isinstance(value, int):
+							yield value
+							break
+						else:
+							raise ValueError(
+								"The returned account value is not an integer'.")
+			for acc in test_iterateJson_valid(value, accounts=accounts):
+				if isinstance(acc, int):
+					yield acc
+					break
+	elif isinstance(iterable, list):
+		for el in iterable:
+			for acc in test_iterateJson_valid(el, accounts=accounts):
+				yield acc
+	resp = acc
+	j = json.loads(resp.text)
+	assert resp.status_code == 500, resp.text
+	assert j == None, resp.text
+
+def test_getAccountValue_non_valid(self, index, accounts):
+    	url = base_url
+	company = "SBUX"
+	fin_struct = requests.get(
+		base_url + "" + f'{company}')[company]['core']
+	fs = fin_struct
+	resp = str(list(test_getAccountValue_valid(fs))[0])
+	j = json.loads(resp.text)
+	assert resp.status_code == 500, resp.text
+	assert j == None, resp.text
+
 
 
 if __name__ == '__main__':

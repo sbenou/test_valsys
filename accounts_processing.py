@@ -40,32 +40,30 @@ class FinancialStructure():
             - <iterator>
         """
         accounts = self.accounts
-        # try:
+        
         if isinstance(iterable, dict):
             for key, value in iterable.items():
                 for account in accounts:
                     if key == account:
                         if not (isinstance(value, dict) or isinstance(value, list)):
-                            if isinstance(value, int):
+                            if isinstance(value, (int, float)):
                                 yield value
                                 break
                             else:
                                 raise ValueError(
-                                    "The returned account value is not an integer'.")
+                                    "The returned account value is neither an integer nor a float'.")
                 for acc in self.iterateJson(value, accounts=accounts):
-                    if isinstance(acc, int):
+                    if isinstance(acc, (int, float)):
                         yield acc
                         break
                     else:
                         raise ValueError(
-                            "The returned account value is not an integer'."
+                            "The returned account value is neither an integer nor a float'."
                         )
         elif isinstance(iterable, list):
             for el in iterable:
                 for acc in self.iterateJson(el, accounts=accounts):
                     yield acc
-
-
 
     def getAccountValue(self, index, accounts):
         accounts = self.accounts

@@ -64,7 +64,6 @@ class FinancialStructure():
             for el in iterable:
                 for acc in self.iterateJson(el, accounts=accounts):
                     yield acc
-        # except IndexError:
 
 
 

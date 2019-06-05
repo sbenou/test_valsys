@@ -40,7 +40,7 @@ class FinancialStructure():
             - <iterator>
         """
         accounts = self.accounts
-        
+
         if isinstance(iterable, dict):
             for key, value in iterable.items():
                 for account in accounts:

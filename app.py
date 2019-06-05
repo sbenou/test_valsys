@@ -31,7 +31,7 @@ def accounts():
     try:
         response = account_name + ': ' + str(result)
     except IndexError:
-        error = "The returned account doesn't hold any value. Please try again with another set of accounts", 500
+        error = "An error has occured", 500
         return render_template('index.html', error=error)
     return render_template('accounts.html', result=response, error=error)
 

@@ -73,7 +73,7 @@ class FinancialStructure():
             result = str(list(self.iterateJson(self.getCompFinStruct(index), accounts))[0])
             return result
         except IndexError: 
-            ("The returned account value is not an integer. Try again with another et of accounts'.")
+            ("The returned account doesn't hold any value. Please try again with another set of accounts")
             result = None
             return result
         return False

@@ -8,7 +8,7 @@ Test-Valsys Instructions
 ========================
 
 The solution chosen is an API in which endpoint 'accounts' will render the last account and it's value from a list of accounts used as parameters that have been saved in a dictionary. 
-A CLI could also have been used by providing the parameters using the curl function but that was just a personal choice
+A CLI could also have been used by providing the parameters using the curl function but this was just a personal choice.
 
 ===========
 Quick Start

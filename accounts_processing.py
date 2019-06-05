@@ -69,15 +69,3 @@ class FinancialStructure():
     def getAccountValue(self, index, accounts):
         accouts = self.accounts
         return str(list(self.iterateJson(self.getCompFinStruct(index), accounts))[0])
-
-
-# data = {
-#     'baseurl': 'https://tech-test-api.valsys.io',
-#     'tickers': '/tickers',
-#     'structure': '/structure?ticker=',
-#     'index': 1,
-#     'accounts': ["IncomeStatement", "EarningsPerShare"]
-# }
-# fs = FinancialStructure(
-#     data['baseurl'], data['tickers'], data['structure'], data['accounts'])
-# print(fs.getAccountValue(data['index'], data['accounts']))

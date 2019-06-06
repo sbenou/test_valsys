@@ -1,5 +1,7 @@
+import os
 from flask import Flask, request, render_template
 from accounts_processing import FinancialStructure
+import json
 
 
 app = Flask(__name__)
@@ -16,7 +18,7 @@ def index():
 @app.route('/accounts/')
 def accounts():
     error = None
-    data = {
+    params = {
         'baseurl': 'https://tech-test-api.valsys.io',
         'tickers': '/tickers',
         'structure': '/structure?ticker=',
@@ -24,6 +26,17 @@ def accounts():
         'accounts': ["IncomeStatement", "EarningsPerShare",
                     "DividendsDeclaredPerCommonShare"]
     }
+
+
+    path = './params.json'
+    if not os.path.exists(path):
+        with open('./params.json', 'w') as f:
+            f.write(json.dumps(params))
+
+    with open(path, 'r') as jfile:
+        data = json.load(jfile)
+        print(data)
+
     fs = FinancialStructure(
         data['baseurl'], data['tickers'], data['structure'], data['accounts'])
     result = fs.getAccountValue(data['index'], data['accounts'])

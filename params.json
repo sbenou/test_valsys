@@ -1,0 +1,1 @@
+{"baseurl": "https://tech-test-api.valsys.io", "tickers": "/tickers", "structure": "/structure?ticker=", "index": 1, "accounts": ["IncomeStatement", "EarningsPerShare", "DividendsDeclaredPerCommonShare"]}

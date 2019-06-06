@@ -29,12 +29,12 @@ def accounts():
                     "DividendsDeclaredPerCommonShare"]
     }
 
-
     path = './params.json'
     if not os.path.exists(path):
         with open('./params.json', 'w') as f:
             f.write(json.dumps(params))
     # end of one off setting
+
 
     with open(path, 'r') as jfile:
         data = json.load(jfile)

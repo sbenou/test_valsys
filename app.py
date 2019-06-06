@@ -20,7 +20,7 @@ def accounts():
     error = None
 
     # start one off settings: we assume here that a json file with params details would exist and be provided
-    # the idea is changes in accounts for testing purposes are made in the params.json to see what happen ...
+    # the idea is changes in accounts for testing purposes are made in the params.json to see what happens ...
     params = {
         'baseurl': 'https://tech-test-api.valsys.io',
         'tickers': '/tickers',

@@ -20,6 +20,7 @@ def accounts():
     error = None
 
     # start one off setting: we assume here that a json file with params etails would exist and be provided
+    # the idea is changes in accounts for testing purposes are made in the params.json to see what happen ...
     params = {
         'baseurl': 'https://tech-test-api.valsys.io',
         'tickers': '/tickers',

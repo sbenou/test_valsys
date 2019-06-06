@@ -19,7 +19,7 @@ def index():
 def accounts():
     error = None
 
-    # start one off settings: we assume here that a json file with params etails would exist and be provided
+    # start one off settings: we assume here that a json file with params details would exist and be provided
     # the idea is changes in accounts for testing purposes are made in the params.json to see what happen ...
     params = {
         'baseurl': 'https://tech-test-api.valsys.io',
